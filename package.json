@@ -1,0 +1,32 @@
+{
+  "name": "nodejsapi",
+  "version": "1.0.0",
+  "description": "This API allows users to interact with the e-commerce application by\r getting a list of products and getting products based on different parameters.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/ruslan-andreev/api-nodejs-solvd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ruslan-andreev/api-nodejs-solvd/issues"
+  },
+  "homepage": "https://gitlab.com/ruslan-andreev/api-nodejs-solvd#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mysql2": "^3.6.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
+  }
+}
