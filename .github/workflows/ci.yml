@@ -5,32 +5,42 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
+    services:
+      db:
+        image: mysql
+        env:
+          MYSQL_DATABASE: storedb
+          MYSQL_USER: ruslan
+          MYSQL_PASSWORD: password
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_INITDB_CHARSET: utf8mb4
+          MYSQL_AUTHENTICATION_PLUGIN: caching_sha2_password
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s --health-retries=3
+
     steps:
       - uses: actions/checkout@v3
         with:
-            node-version: 20
+          node-version: 14
+          
+      - name: Build and run docker containers
+        run: |
+          docker-compose up -d
+          docker-compose ps
+
       - name: Install dependencies
         run: npm install
-      - name: Start MySQL service
-        uses: docker-compose-action@v1
-        with:
-          compose-file: ./docker-compose.yml
-          detach-keys: ctrl-b
-          service: db
-      - name: Wait for MySQL to start
+       
+      - name: Unit tests
+        run: npm run test
+        
+      - name: Stop docker containers
         run: |
-          while ! mysqladmin ping -h localhost -u root -p${MYSQL_ROOT_PASSWORD} --silent; do
-            echo 'Waiting for MySQL to start...'
-            sleep 5
-          done
-      - name: Unit tests
-        run: npm run test
-      - name: Unit tests
-        run: npm run test
+          docker-compose down
