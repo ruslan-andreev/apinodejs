@@ -18,5 +18,19 @@ jobs:
             node-version: 20
       - name: Install dependencies
         run: npm install
+      - name: Start MySQL service
+        uses: docker-compose-action@v1
+        with:
+          compose-file: ./docker-compose.yml
+          detach-keys: ctrl-b
+          service: db
+      - name: Wait for MySQL to start
+        run: |
+          while ! mysqladmin ping -h localhost -u root -p${MYSQL_ROOT_PASSWORD} --silent; do
+            echo 'Waiting for MySQL to start...'
+            sleep 5
+          done
+      - name: Unit tests
+        run: npm run test
       - name: Unit tests
         run: npm run test
