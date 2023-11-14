@@ -5,6 +5,7 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+    
   workflow_dispatch:
 
 jobs:
@@ -22,25 +23,25 @@ jobs:
           MYSQL_INITDB_CHARSET: utf8mb4
           MYSQL_AUTHENTICATION_PLUGIN: caching_sha2_password
         ports:
-          - 3307:3306
+        - 3307:3306
         options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
       - uses: actions/checkout@v3
         with:
-          node-version: 14
-          
+          node-version: 20
+
       - name: Build and run docker containers
         run: |
-          docker-compose up -d
+          docker-compose up --build -d
           docker-compose ps
 
       - name: Install dependencies
         run: npm install
-       
+
       - name: Unit tests
         run: npm run test
-        
+
       - name: Stop docker containers
         run: |
           docker-compose down
