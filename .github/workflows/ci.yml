@@ -22,7 +22,7 @@ jobs:
           MYSQL_INITDB_CHARSET: utf8mb4
           MYSQL_AUTHENTICATION_PLUGIN: caching_sha2_password
         ports:
-          - 3306:3306
+          - 3307:3306
         options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
