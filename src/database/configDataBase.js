@@ -12,7 +12,7 @@ function configDataBase() {
     
     schemaDataBase = data;
 
-    connection.query(schemaDataBase, (err, result) => {
+    connection.query(schemaDataBase, (err) => {
       if (err) {
         console.log('Error on query schema for database:', err);
         return;

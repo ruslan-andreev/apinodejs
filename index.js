@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const configDataBase = require('./src/database/configDataBase.js');
 
 dotenv.config();
-//configDataBase();
+configDataBase();
 
 const productsRouter = require('./src/routes/products');
 const usersRouter = require('./src/routes/users.js');

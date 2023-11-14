@@ -14,7 +14,7 @@ function auth(req, res, next) {
     res.status(401).json({massage: "Wrong token"})
   }
 
-  const {valid, encodedPayload} = verifyed;
+  const {encodedPayload} = verifyed;
   const payload = JSON.parse(base64urldecode(encodedPayload))
   let expirationTime = null;
   
