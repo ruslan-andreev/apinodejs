@@ -29,7 +29,7 @@ Content:
 ## Implementation details <a name="Implementation-details"></a>
   How to run project:
   - Instull Docker. 
-  - Pull folder from GitLab: https://gitlab.com/ruslan-andreev/api-nodejs-solvd
+  - Pull folder from GitHub: https://github.com/ruslan-andreev/apinodejs
   - Open console and run command "docker-compose up --build"
 
   Application will start on port http://localhost:3500
@@ -326,14 +326,12 @@ Content:
           "id":1,
           "email":"some@gmail.com",
           "username":"Alex22"',
-          "password":"m38rmF$",
           "isAdmin": true || false
         },
         {
           "id":2,
           "email":"someOther@gmail.com",
           "username":"Bob122",
-          "password":"ksvfs",
           "isAdmin": true || false
         },
         ...
@@ -364,7 +362,6 @@ Content:
       "id":1,
       "email":"some@gmail.com",
       "username":"Alex222",
-      "password":"m38rmF$",
       "isAdmin": true || false
     }
 

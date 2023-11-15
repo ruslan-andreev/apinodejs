@@ -9,19 +9,19 @@ should return a list of users if exists
 RESPONSE
 ```
 [
-    {"id":1,"email":"someemail@gmail.com","userName":"Alex","password":"1234","isAdmin":1},
-    {"id":2,"email":"bod@gmail.com","userName":"Bob","password":"qwerty","isAdmin":0},
-    {"id":3,"email":"kate@gmail.com","userName":"Kate","password":"12kfbds34","isAdmin":0},
-    {"id":4,"email":"example1@gmail.com","userName":"John","password":"1234","isAdmin":1},
-    {"id":5,"email":"example2@yahoo.com","userName":"Emma","password":"5678","isAdmin":0},
-    {"id":6,"email":"example3@hotmail.com","userName":"Mike","password":"abcd","isAdmin":1},
-    {"id":7,"email":"example4@gmail.com","userName":"Sarah","password":"9876","isAdmin":0},
-    {"id":8,"email":"example5@yahoo.com","userName":"David","password":"qwerty","isAdmin":0},
-    {"id":9,"email":"example6@gmail.com","userName":"Lisa","password":"password","isAdmin":0},
-    {"id":10,"email":"example7@hotmail.com","userName":"Alexey","password":"98653","isAdmin":0},
-    {"id":11,"email":"example8@yahoo.com","userName":"Jessica","password":"abcd1234","isAdmin":0},
-    {"id":12,"email":"example9@gmail.com","userName":"Ryan","password":"password123","isAdmin":0},
-    {"id":13,"email":"example10@hotmail.com","userName":"Emily","password":"987654","isAdmin":0}
+    {"id":1,"email":"someemail@gmail.com","userName":"Alex","isAdmin":1},
+    {"id":2,"email":"bod@gmail.com","userName":"Bob","isAdmin":0},
+    {"id":3,"email":"kate@gmail.com","userName":"Kate","isAdmin":0},
+    {"id":4,"email":"example1@gmail.com","userName":"John","isAdmin":1},
+    {"id":5,"email":"example2@yahoo.com","userName":"Emma","isAdmin":0},
+    {"id":6,"email":"example3@hotmail.com","userName":"Mike","isAdmin":1},
+    {"id":7,"email":"example4@gmail.com","userName":"Sarah","isAdmin":0},
+    {"id":8,"email":"example5@yahoo.com","userName":"David","isAdmin":0},
+    {"id":9,"email":"example6@gmail.com","userName":"Lisa","isAdmin":0},
+    {"id":10,"email":"example7@hotmail.com","userName":"Alexey","isAdmin":0},
+    {"id":11,"email":"example8@yahoo.com","userName":"Jessica","isAdmin":0},
+    {"id":12,"email":"example9@gmail.com","userName":"Ryan","isAdmin":0},
+    {"id":13,"email":"example10@hotmail.com","userName":"Emily","isAdmin":0}
 ]
 ```
 
@@ -31,7 +31,7 @@ should return user by id if exists
 
 RESPONSE
 ```
-{"id":2,"email":"bod@gmail.com","userName":"Bob","password":"qwerty","isAdmin":0}
+{"id":2,"email":"bod@gmail.com","userName":"Bob","isAdmin":0}
 ```
 
 ### signUp
