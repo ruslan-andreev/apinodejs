@@ -16,7 +16,7 @@ jobs:
       db:
         image: mysql
         env:
-          MYSQL_DATABASE: storedb
+          MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
           MYSQL_USER: ${{ secrets.MYSQL_USER }}
           MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
           MYSQL_ROOT_PASSWORD: ${{ secrets. MYSQL_ROOT_PASSWORD }}
