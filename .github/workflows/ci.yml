@@ -19,9 +19,9 @@ jobs:
           MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
           MYSQL_USER: ${{ secrets.MYSQL_USER }}
           MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
-          MYSQL_ROOT_PASSWORD: ${{ secrets. MYSQL_ROOT_PASSWORD }}
-          MYSQL_INITDB_CHARSET: utf8mb4
-          MYSQL_AUTHENTICATION_PLUGIN: caching_sha2_password
+          MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+          MYSQL_INITDB_CHARSET: ${{ secrets.MYSQL_INITDB_CHARSET }}
+          MYSQL_AUTHENTICATION_PLUGIN: ${{ secrets.MYSQL_AUTHENTICATION_PLUGIN }}
         ports:
         - 3306:3306
         options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s --health-retries=3
