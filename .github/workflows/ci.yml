@@ -17,9 +17,9 @@ jobs:
         image: mysql
         env:
           MYSQL_DATABASE: storedb
-          MYSQL_USER: ruslan
-          MYSQL_PASSWORD: password
-          MYSQL_ROOT_PASSWORD: password
+          MYSQL_USER: ${{ secrets.MYSQL_USER }}
+          MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+          MYSQL_ROOT_PASSWORD: ${{ secrets. MYSQL_ROOT_PASSWORD }}
           MYSQL_INITDB_CHARSET: utf8mb4
           MYSQL_AUTHENTICATION_PLUGIN: caching_sha2_password
         ports:
